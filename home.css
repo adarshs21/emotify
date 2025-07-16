@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+  font-family: 'horizon';
+  src: url('fonts/Horizon-normal.ttf') format('truetype');
+}
+#bgvideo {
+  position:fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    font-family: 'horizon', sans-serif;
+    
+}
+.header{
+    height:50px;
+    width:100%;
+    color:white;
+    background-color: #000000;
+    display: flex;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.header-left{
+    width: 50%;
+    padding:10px 20px;
+}
+.header-right{
+    width: 50%;
+    padding:15px 30px;
+}
+.header-right nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+.header-right nav ul li{
+  display: flex;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left:30px;
+    text-transform:capitalize;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.135);
+    padding:3px 3px;
+    border-radius:3px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.header-right nav ul li a{
+    font-weight:bolder;
+    color: rgba(255, 255, 255, 0.338);
+    text-decoration: none;
+}
+.middle{
+  height:calc(100vh - 60px);
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.middle input[type="text"] {
+  padding: 12px 20px;
+  margin-top: 20px;
+  width: 320px;
+  max-width: 100%;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(44, 44, 44, 0.4);
+  color:white;
+}
+.middle input[type="text"]:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+.middle input[type="text"]::placeholder {
+  color: #ffffff;
+  opacity: 0.8;
+  font-size:small;
+}
+.middle button {
+  position: absolute;
+  left:56.2%;
+  top:54.5%;
+  padding: 10px 10px;
+  width: 80px;
+  max-width: 80%;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  iframe {
+    border-radius: 12px;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.9);
+  }
+  .songbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    position:absolute;
+    top:65%;
+  }
+  .song-list{
+    width:80%;
+    display:flex;
+    flex-direction: row;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .fade-wrapper {
+    position:relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 62%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .song-list::-webkit-scrollbar {
+  display: none;        
+}
+.songbox button {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease
+}
+#scroll-btn1, #scroll-btn2 {
+  display: none;
+}
+.header-right nav ul li img{
+    width: 15px;
+    height: 15px;
+    margin-right:3px;
+    
+}
+
+@media (max-width:480px) {
+ 
+ .middle{
+    height:60vh;
+    width:100%;
+  }
+ .songbox{
+    top: 30%;
+    width: 100%;
+    height: 100%;
+  }
+ 
+  .song-list{
+    width:100%;
+  }
+  
+}
